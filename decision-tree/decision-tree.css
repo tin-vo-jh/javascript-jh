@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.chat-container {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #007bff;
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chat-body {
+  padding: 20px;
+  text-align: center;
+}
+
+#question-text {
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.options-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style cho các nút chọn */
+button {
+  background-color: white;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Style cho link mua hàng ở trang kết quả */
+.buy-link {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.restart-btn {
+  margin-top: 15px;
+  background: #6c757d;
+  color: white;
+  border: none;
+}
