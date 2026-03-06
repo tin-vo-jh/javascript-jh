@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mapbox Location Finder | Smart Address Search</title>
+    <meta name="description" content="Interactive location search application powered by Mapbox API. Search cities, addresses, and visualize them on a smooth interactive map.">
+    <meta name="keywords" content="Mapbox, Geocoding, Interactive Maps, Address Finder, JavaScript API">
+    <link rel="canonical" href="https://yourdomain.com/">
+
+    <link rel="preconnect" href="https://api.mapbox.com">
+    <link rel="dns-prefetch" href="https://api.mapbox.com">
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="mapbox.css">
+</head>
+<body>
+
+    <h1 class="sr-only">Interactive Mapbox Location Finder</h1>
+
+    <header class="search-container">
+        <div class="search-box">
+            <label for="search-input" class="sr-only">Search for a location</label>
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search for a city, address, or place..." 
+                autocomplete="off"
+                aria-autocomplete="list"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-controls="suggestions-list"
+            >
+            <ul id="suggestions-list" class="suggestions-dropdown" role="listbox" hidden></ul>
+        </div>
+    </header>
+
+    <main id="map" aria-label="Interactive Mapbox Application" role="application"></main>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+    <script src="mapbox.js" type="module"></script>
+</body>
+</html>
