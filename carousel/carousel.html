@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Image Carousel</title>
+  <meta name="description" content="High-quality product image gallery">
+  <link rel="stylesheet" href="carousel.css">
+</head>
+<body>
+
+  <section class="carousel" aria-label="Product image gallery">
+    
+    <figure class="carousel__main">
+      <img id="mainImage" src="https://picsum.photos/seed/1/800/400" alt="Detailed product view 1" width="800" height="400" loading="eager">
+      
+      <nav class="carousel__controls" aria-label="Main image navigation">
+        <button id="prevBtn" aria-label="View previous image" title="Previous">❮</button>
+        <button id="nextBtn" aria-label="View next image" title="Next">❯</button>
+      </nav>
+    </figure>
+
+    <nav class="carousel__thumbnails" aria-label="Select thumbnail image">
+      <ul id="thumbnailList">
+        </ul>
+    </nav>
+
+  </section>
+
+  <script src="carousel.js" defer></script>
+</body>
+</html>

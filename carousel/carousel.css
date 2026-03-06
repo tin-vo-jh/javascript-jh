@@ -1,0 +1,108 @@
+/* Initialize color variables and basic settings */
+:root {
+  --primary-color: #007bff;
+  --bg-color: #f8f9fa;
+  --text-color: #333;
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Main Container */
+.carousel {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Replaces messy margins/paddings */
+}
+
+/* Main Image Area */
+.carousel__main {
+  position: relative;
+  margin: 0; /* Remove default figure margin */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #000;
+  aspect-ratio: 2 / 1; /* Locks aspect ratio, prevents layout shifts (CLS) - great for SEO */
+}
+
+.carousel__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity var(--transition-speed) ease-in-out;
+}
+
+/* Navigation Buttons on Main Image */
+.carousel__controls button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background var(--transition-speed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__controls button:hover {
+  background: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+#prevBtn { left: 16px; }
+#nextBtn { right: 16px; }
+
+/* Thumbnail List */
+.carousel__thumbnails ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Buttons wrapping Thumbnails (For Accessibility) */
+.carousel__thumbnails button {
+  padding: 0;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+  background: none;
+  transition: all var(--transition-speed);
+}
+
+.carousel__thumbnails button:hover,
+.carousel__thumbnails button:focus {
+  opacity: 1;
+}
+
+.carousel__thumbnails button.active {
+  border-color: var(--primary-color);
+  opacity: 1;
+}
+
+.carousel__thumbnails img {
+  display: block;
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+}
