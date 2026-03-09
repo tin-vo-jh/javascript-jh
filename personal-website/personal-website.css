@@ -216,24 +216,17 @@ img, figure { display: block; max-width: 100%; height: auto; margin: 0; }
 
 /* Portrait — full-width on mobile, image stack below text */
 .hero__image-wrap { width: 100%; display: flex; align-items: flex-start; justify-content: center; position: relative; order: 2; overflow: hidden; }
+
 /* Glow defined only at 431px+ via min-width query */
 .hero__image-circle {
-  width: 100%;
-  height: 300px;
+  width: min(100%, 320px);
+  height: auto;
   border-radius: 0;
-  overflow: hidden;
-  background: var(--clr-bg);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
-.hero__image-circle::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 55%, rgba(18,18,18,.55) 80%, var(--clr-bg) 100%);
-  pointer-events: none;
-}
-.hero__photo { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.hero__photo { width: 100%; height: auto; display: block; }
 
 /* Stats */
 .hero__stats-card {
@@ -463,18 +456,8 @@ select.contact-form__input {
   .hero__content { padding-top: 20px; gap: 24px; align-items: center; }
   .hero__text { order: 0; padding: 0; }
   .hero__image-wrap { width: 100%; order: 0; overflow: visible; }
-  .hero__image-wrap::before {
-    content: '';
-    position: absolute;
-    width: min(618px, 120vw); height: min(618px, 120vw);
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,.06) 0%, transparent 70%);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .hero__image-circle { width: clamp(220px, 68%, 300px); height: auto; aspect-ratio: 3 / 4; border-radius: 12px 12px 0 0; }
+
+  .hero__image-circle { width: clamp(240px, 72%, 320px); height: auto; border-radius: 12px 12px 0 0; }
   .hero__greeting { font-size: 24px; margin-bottom: 15px; }
   .hero__name { font-size: 1.6rem; margin-bottom: 15px; }
   .hero__title { font-size: 2.4rem; margin-bottom: 28px; }
@@ -557,7 +540,7 @@ select.contact-form__input {
   .hero__image-wrap { flex-shrink: 0; width: auto; order: 0; }
   .hero__socials { justify-content: flex-start; }
   .hero__actions { justify-content: flex-start; }
-  .hero__image-circle { width: 300px; height: 380px; border-radius: 20px 20px 0 0; }
+  .hero__image-circle { width: 300px; height: auto; border-radius: 20px 20px 0 0; }
   .hero__title { font-size: 3rem; }
   .hero__name { font-size: 28px; }
   .hero__greeting { font-size: 24px; }
@@ -630,7 +613,7 @@ select.contact-form__input {
 
   .section--hero { padding: 0 60px 60px; min-height: 854px; }
   .hero__content { min-height: 781px; }
-  .hero__image-circle { width: 360px; height: 480px; }
+  .hero__image-circle { width: 360px; height: auto; }
   .hero__title { font-size: clamp(2.5rem, 6vw, 4.5rem); }
   .hero__stats-card { margin-top: 40px; }
 
@@ -665,7 +648,7 @@ select.contact-form__input {
 ------------------------------------------------- */
 @media (min-width: 1281px) {
   .section--hero { padding: 0 80px 60px; }
-  .hero__image-circle { width: 420px; height: 560px; border-radius: 20px 20px 0 0; }
+  .hero__image-circle { width: 420px; height: auto; border-radius: 20px 20px 0 0; }
 }
 
 /* 17. REDUCED MOTION — WCAG 2.1 AA
