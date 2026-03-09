@@ -219,14 +219,14 @@ img, figure { display: block; max-width: 100%; height: auto; margin: 0; }
 
 /* Glow defined only at 431px+ via min-width query */
 .hero__image-circle {
-  width: min(100%, 320px);
+  width: min(100%, 420px);
   height: auto;
   border-radius: 0;
   background: transparent;
   position: relative;
   z-index: 1;
 }
-.hero__photo { width: 100%; height: auto; display: block; }
+.hero__photo { width: 100%; height: auto; display: block; filter: grayscale(100%); }
 
 /* Stats */
 .hero__stats-card {
@@ -274,6 +274,7 @@ img, figure { display: block; max-width: 100%; height: auto; margin: 0; }
   object-fit: cover;
   object-position: top center;
   border-radius: 16px;
+  filter: grayscale(100%);
 }
 .about__bio { display: flex; flex-direction: column; gap: 32px; padding-top: 0; }
 .about__bio p { font-size: 0.875rem; color: var(--clr-muted); line-height: 1.9; }
@@ -457,7 +458,7 @@ select.contact-form__input {
   .hero__text { order: 0; padding: 0; }
   .hero__image-wrap { width: 100%; order: 0; overflow: visible; }
 
-  .hero__image-circle { width: clamp(240px, 72%, 320px); height: auto; border-radius: 12px 12px 0 0; }
+  .hero__image-circle { width: clamp(300px, 85%, 420px); height: auto; border-radius: 12px 12px 0 0; }
   .hero__greeting { font-size: 24px; margin-bottom: 15px; }
   .hero__name { font-size: 1.6rem; margin-bottom: 15px; }
   .hero__title { font-size: 2.4rem; margin-bottom: 28px; }
@@ -540,7 +541,7 @@ select.contact-form__input {
   .hero__image-wrap { flex-shrink: 0; width: auto; order: 0; }
   .hero__socials { justify-content: flex-start; }
   .hero__actions { justify-content: flex-start; }
-  .hero__image-circle { width: 300px; height: auto; border-radius: 20px 20px 0 0; }
+  .hero__image-circle { width: 380px; height: auto; border-radius: 20px 20px 0 0; }
   .hero__title { font-size: 3rem; }
   .hero__name { font-size: 28px; }
   .hero__greeting { font-size: 24px; }
@@ -613,7 +614,7 @@ select.contact-form__input {
 
   .section--hero { padding: 0 60px 60px; min-height: 854px; }
   .hero__content { min-height: 781px; }
-  .hero__image-circle { width: 360px; height: auto; }
+  .hero__image-circle { width: 460px; height: auto; }
   .hero__title { font-size: clamp(2.5rem, 6vw, 4.5rem); }
   .hero__stats-card { margin-top: 40px; }
 
@@ -648,7 +649,7 @@ select.contact-form__input {
 ------------------------------------------------- */
 @media (min-width: 1281px) {
   .section--hero { padding: 0 80px 60px; }
-  .hero__image-circle { width: 420px; height: auto; border-radius: 20px 20px 0 0; }
+  .hero__image-circle { width: 540px; height: auto; border-radius: 20px 20px 0 0; }
 }
 
 /* 17. REDUCED MOTION — WCAG 2.1 AA
