@@ -4,15 +4,11 @@
 import { MAPBOX_TOKEN } from './config.js';
 
 function useMap() {
-    // Create a private scoped reference to mapboxgl
-    // This prevents direct manipulation of the global mapboxgl object
-    const mapboxInstance = mapboxgl;
-
-    // Set token on private instance
-    mapboxInstance.accessToken = MAPBOX_TOKEN;
+    // Set token
+    mapboxgl.accessToken = MAPBOX_TOKEN;
 
     // Map Rendering
-    const map = new mapboxInstance.Map({
+    const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v12',
         center: [107.3075, 10.4778],
@@ -20,21 +16,22 @@ function useMap() {
     });
 
     // Lock accessToken after map is initialized
-    Object.defineProperty(mapboxInstance, 'accessToken', {
+    Object.defineProperty(mapboxgl, 'accessToken', {
         get: () => undefined,
         set: () => {},
         configurable: false
     });
 
+
     // Create Info Card (Popup): Create an HTML popup
-    const initialPopup = new mapboxInstance.Popup({ offset: 25 })
+    const initialPopup = new mapboxgl.Popup({ offset: 25 })
         .setHTML(`
             <div class="info-card-title">Dat Do</div>
             <div class="info-card-address">Default starting location</div>
         `);
 
     // Add Marker: Use mapboxgl.Marker() attached to a hardcoded coordinate
-    let currentMarker = new mapboxInstance.Marker({ color: '#007cbf' })
+    let currentMarker = new mapboxgl.Marker({ color: '#007cbf' })
         .setLngLat([107.3075, 10.4778])
         .setPopup(initialPopup)
         .addTo(map);
@@ -129,14 +126,14 @@ function useMap() {
         }
 
         // 4. Create new Info Card (Popup)
-        const popup = new mapboxInstance.Popup({ offset: 25 })
+        const popup = new mapboxgl.Popup({ offset: 25 })
             .setHTML(`
                 <div class="info-card-title">${shortName}</div>
                 <div class="info-card-address">${placeName}</div>
             `);
 
         // 5. Place new marker at selected coordinates
-        currentMarker = new mapboxInstance.Marker({ color: '#007cbf' })
+        currentMarker = new mapboxgl.Marker({ color: '#007cbf' })
             .setLngLat(coordinates)
             .setPopup(popup)
             .addTo(map);
